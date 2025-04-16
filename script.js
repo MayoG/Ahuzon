@@ -1,37 +1,3 @@
-// --- Extraction script to run in console of messages.html for the episodes
-// (function() {
-//     const messages = Array.from(document.querySelectorAll('.message'));
-//     let episodes = [];
-//     let currentEpisode = null;
-
-//     messages.forEach(msg => {
-//         const textDiv = msg.querySelector('.text');
-//         if (textDiv && textDiv.textContent.trim()) {
-//             // New episode
-//             currentEpisode = {
-//                 name: textDiv.textContent.trim(),
-//                 questions: []
-//             };
-//             episodes.push(currentEpisode);
-//         }
-//         const imgs = msg.querySelectorAll('a.photo_wrap');
-//         imgs.forEach(a => {
-//             const imgSrc = a.getAttribute('href');
-//             if (currentEpisode && imgSrc) {
-//                 currentEpisode.questions.push({
-//                     imgSrc: imgSrc,
-//                     answer: null // Placeholder for future answer
-//                 });
-//             }
-//         });
-//     });
-
-//     // Output as JSON for easy copy-paste
-//     console.log(JSON.stringify(episodes, null, 2));
-// })();
-
-
-
 // ======= Paste your extracted episodes JSON below =======
 const episodes = [
     {
