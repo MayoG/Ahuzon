@@ -55,6 +55,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+    display: block; /* if it's not already a block element */
 }
 .episode-header:hover {
     background: var(--header-hover);
