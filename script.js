@@ -2564,7 +2564,7 @@ const episodes = [
           }
         },
         {
-          "imgSrc": "images/2_13-5.jpg",
+          "imgSrc": ["images/2_13-5.jpg", "images/2_13-5-0.jpg"],
           "answer": {
             "img": "images/2_13-5-answer.jpg"
           }
@@ -2573,12 +2573,6 @@ const episodes = [
           "imgSrc": "images/2_13-1.jpg",
           "answer": {
             "img": "images/2_13-1-answer.jpg"
-          }
-        },
-        {
-          "imgSrc": "images/2_13-0.jpg",
-          "answer": {
-            "img": "images/2_13-0-answer.jpg"
           }
         }
       ]
@@ -2800,19 +2794,43 @@ const episodes = [
                 qDiv.style.flexDirection = 'column';
                 qDiv.style.alignItems = 'center';
 
-                // Image
-                const img = document.createElement('img');
-                img.src = q.imgSrc;
-                img.alt = `Question ${qIdx + 1}`;
-                img.loading = 'lazy';
-                img.classList.add('question-img');
-                img.addEventListener('click', function() {
-                    img.classList.toggle('zoomed');
-                    // Overlay logic
-                    if (img.classList.contains('zoomed')) {
-                        showImageOverlay(img.src, img.alt, img);
-                    }
-                });
+                // Image(s)
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'question-img-container';
+                
+                if (Array.isArray(q.imgSrc)) {
+                    q.imgSrc.forEach((src, idx) => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = `Question ${qIdx + 1} Image ${idx + 1}`;
+                        img.loading = 'lazy';
+                        img.classList.add('question-img');
+                        img.addEventListener('click', function() {
+                            img.classList.toggle('zoomed');
+                            // Overlay logic
+                            if (img.classList.contains('zoomed')) {
+                                showImageOverlay(img.src, img.alt, img);
+                            }
+                        });
+                        imgContainer.appendChild(img);
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = q.imgSrc;
+                    img.alt = `Question ${qIdx + 1}`;
+                    img.loading = 'lazy';
+                    img.classList.add('question-img');
+                    img.addEventListener('click', function() {
+                        img.classList.toggle('zoomed');
+                        // Overlay logic
+                        if (img.classList.contains('zoomed')) {
+                            showImageOverlay(img.src, img.alt, img);
+                        }
+                    });
+                    imgContainer.appendChild(img);
+                }
+                
+                qDiv.appendChild(imgContainer);
 
                 // Show Answer Button
                 const btn = document.createElement('button');
@@ -2847,7 +2865,6 @@ const episodes = [
                 }
                 answerDiv.style.display = 'none';
 
-                qDiv.appendChild(img);
                 qDiv.appendChild(btn);
                 qDiv.appendChild(answerDiv);
                 content.appendChild(qDiv);
