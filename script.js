@@ -266,7 +266,7 @@ const episodes = [
       ]
     },
     {
-      "name": "עונה 1 פרק 4 - סיישל מונדיאל",
+      "name": "עונה 1 פרק 4 - ספיישל מונדיאל",
       "questions": [
         {
           "imgSrc": "images/1_4-90.jpg",
