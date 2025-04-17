@@ -140,11 +140,26 @@ h1 {
 .question img:hover {
     transform: scale(1.04);
 }
+
 @media (max-width: 600px) {
-    .container { padding: 10px; }
-    .episode-content { padding: 10px 5px 5px 5px; }
-    .question img { max-width: 80px; max-height: 80px; }
-}
+    .container {
+      padding: 10px 4px;
+      margin: auto;
+    }
+    .episode-header {
+      font-size: 1em;
+      padding: 12px 8px;
+    }
+    .episode-content {
+      padding: 10px 4px 4px 4px;
+    }
+    .question {
+      gap: 10px;
+    }
+    h1 {
+      font-size: 1.3em;
+    }
+  }
 
 .answer-img {
     max-width: 350px;
