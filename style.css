@@ -162,13 +162,8 @@ h1 {
   }
 
 .answer-img {
-    max-width: 350px;
     max-height: 350px;
-    border-radius: 10px;
-    border: 2px solid var(--highlight);
     margin-top: 8px;
-    background: #fff;
-    box-shadow: 0 1px 8px rgba(252,219,150,0.13);
 }
 
 .question-img-container {
@@ -220,39 +215,93 @@ h1 {
 }
 
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
   
-  .contact-email {
-    background: var(--highlight);
-    color: var(--header-text);
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-size: 1.15em;
-    font-weight: 600;
-    margin-top: 8px;
-    box-shadow: 0 2px 12px 0 #0002;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .contact-email a {
-    color: var(--header-text);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .contact-email a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-  }
+.contact-email {
+  background: var(--highlight);
+  color: var(--header-text);
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-top: 8px;
+  box-shadow: 0 2px 12px 0 #0002;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-email a {
+  color: var(--header-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-email a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
   
   .email-icon {
     font-size: 1.3em;
   }
+
+  .play-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 32px;
+    background: var(--highlight);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    text-align: center;
+}
+#timer {
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #2196f3;
+    font-weight: bold;
+}
+.button-group {
+    margin-top: 24px;
+}
+.button-group button {
+    margin: 0 8px;
+    padding: 12px 22px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background: #2196f3;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.button-group button:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+}
+#answer-text {
+    margin-top: 18px;
+    padding: 12px;
+    background: #e3f2fd;
+    border-radius: 6px;
+    color: #222;
+    font-weight: bold;
+}
+
+#question-text, #question-title {
+  color: #222;
+}
+
+.answer-img.zoomed, .question-img.zoomed {
+  transform: scale(2.5);
+  z-index: 1000;
+  position: relative;
+  cursor: zoom-out;
+  transition: transform 0.2s;
+}

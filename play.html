@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>משחק על זמן</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html">דף הבית</a>
+        <a href="play.html" class="active">משחק על זמן</a>
+        <a href="about.html">אודות</a>
+        <a href="contact.html">צור קשר</a>
+    </nav>
+    <div class="play-container">
+        <h2 id="question-title"></h2>
+        <div id="timer">45</div>
+        <div id="question-img-container" class="question-img-container"></div>
+        <div id="question-text"></div>
+        <div class="button-group">
+            <button id="freeze-btn">עצור זמן</button>
+            <button id="show-answer-btn">הצג תשובה</button>
+            <button id="next-question-btn">שאלה הבאה</button>
+        </div>
+        <div id="answer-text" style="display:none;"></div>
+    </div>
+    <script src="play.js"></script>
+</body>
+</html>
